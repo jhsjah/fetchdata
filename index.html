@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+h1 fetch thw data
+
+<button id="butt">jkhfjhd</button>
+<table border="1" id="tab">
+
+</table>
+<body>
+    <script>
+ let butt = document.getElementById("butt");
+        butt.addEventListener("click",fn1); // callback
+    function fn1(){
+
+
+        fetch("https://reqres.in/api/users") // always retuen a promise
+        .then((res) => res.json())  // .then its again call back
+        .then((r)=>{console.log(r.data)
+        for(i=0;i<=r.data.length;i++){
+
+
+            console.log(r.data)
+            let email = r.data[i].email;
+            let avatar = r.data[i].avatar;
+            console.log(email);
+            let table =document.getElementById('tab');
+            let tr =document.createElement("tr");
+            tr.innerHTML='<td>'+email+'</td>'+'<td>'+avatar+'</td>';
+            table.appendChild(tr);
+            
+        }
+         });
+
+        }
+    
+        
+         
+
+    </script>
+</body>
+</html>
